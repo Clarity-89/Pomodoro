@@ -1,13 +1,18 @@
-
-(function () {
+(function ($) {
+    // Default timer
     var time = 1500000;
+    var t = null;
+    var timer = document.getElementById('timer');
+    timer.innerHTML = msToTime(time);
+    function pomodoro() {
 
-    function timer() {
-        var timer = document.getElementById('timer');
-        time -= 1000;
-        timer.innerHTML = msToTime(time);
+        if (time > 0) {
+            time -= 1000;
+            timer.innerHTML = msToTime(time);
+        }
     }
 
+    // Format milliseconds to hh:mm:ss
     function msToTime(s) {
 
         function addZ(n) {
@@ -24,5 +29,20 @@
         return addZ(hrs) + ':' + addZ(mins) + ':' + addZ(secs);
     }
 
-    setInterval(timer, 1000);
-})();
+    $('#start').click(function () {
+        if (t === null) {
+            t = setInterval(pomodoro, 1000);
+            $('#reset, #pause').show();
+            $('#info').remove();
+        }
+
+    });
+
+    $('#reset').click(function () {
+        clearInterval(t);
+        t = null;
+        //set time to default value
+        time = 1500000;
+        timer.innerHTML = msToTime(time);
+    })
+})(jQuery);
