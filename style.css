@@ -12,13 +12,13 @@ html, body {
     background: -ms-linear-gradient(top, #8fc800 0%,#8fc800 100%); /* IE10+ */
     background: linear-gradient(to bottom, #8fc800 0%,#8fc800 100%); /* W3C */
     margin: 5% auto;
-    padding: 5%;
+    padding: 3%;
     text-align: center;
 
 }
 
-#timer {
-    margin: 5%;
+#timer, #break {
+    margin: 1% 5%;
     font-size: 48px;
 }
 

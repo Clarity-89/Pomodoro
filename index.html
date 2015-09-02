@@ -19,8 +19,21 @@
 </head>
 <body>
 <div class="container" id="container-custom">
-    <p id="info">Choose the length of the session and break and press 'Start'. The default values are 25 and 5 minutes respectively. </p>
-    <div id="timer"></div>
+    <p class="lead" id="info">Choose the length of the session and the break and press 'Start'. <br> The default values
+        are 25 and 5 minutes respectively. </p>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <p class="lead">Session</p>
+
+            <div id="timer"></div>
+        </div>
+        <div class="col-xs-6">
+            <p class="lead">Break</p>
+
+            <div id="break"></div>
+        </div>
+    </div>
     <button id="start">Start</button>
 
     <button id="reset">Reset</button>

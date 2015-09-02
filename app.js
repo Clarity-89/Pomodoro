@@ -1,16 +1,32 @@
 (function ($) {
     // Default timer
-    var time = 1500000;
+    var time = 15000;
+    var pauseTime = 3000;
     var t = null;
     var timer = document.getElementById('timer');
     timer.innerHTML = msToTime(time);
+    var pause = document.getElementById('break');
+    pause.innerHTML = msToTime(pauseTime);
+
     function pomodoro() {
 
         if (time > 0) {
             time -= 1000;
             timer.innerHTML = msToTime(time);
+            if (time === 0) {
+                pauseTime = 3000;
+            }
+        } else {
+            var snd = new Audio("cell.mp3"); // buffers automatically when created
+            snd.play();
+            pauseTime -= 1000;
+            pause.innerHTML = msToTime(pauseTime);
+            if (pauseTime === 0) {
+                time = 15000;
+            }
         }
     }
+
 
     // Format milliseconds to hh:mm:ss
     function msToTime(s) {
