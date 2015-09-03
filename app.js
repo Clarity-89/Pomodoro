@@ -1,32 +1,42 @@
 (function ($) {
     // Default timer
-    var time = 15000;
+    var defaultTime = 15000; // 25 minutes
     var pauseTime = 3000;
     var t = null;
     var timer = document.getElementById('timer');
-    timer.innerHTML = msToTime(time);
-    var pause = document.getElementById('break');
-    pause.innerHTML = msToTime(pauseTime);
+    timer.innerHTML = msToTime(defaultTime);
+
+    var snd = new Audio("cell.mp3"); // buffers automatically when created
 
     function pomodoro() {
 
-        if (time > 0) {
-            time -= 1000;
-            timer.innerHTML = msToTime(time);
-            if (time === 0) {
+        if (defaultTime > 0) {
+            runTimer();
+            if (defaultTime === 0) {
                 pauseTime = 3000;
+
+                snd.play();
+            } else {
+                snd.pause();
             }
         } else {
-            var snd = new Audio("cell.mp3"); // buffers automatically when created
-            snd.play();
-            pauseTime -= 1000;
-            pause.innerHTML = msToTime(pauseTime);
+
+            runBreak();
             if (pauseTime === 0) {
-                time = 15000;
+                defaultTime = 15000;
             }
         }
     }
 
+    function runTimer() {
+        defaultTime -= 1000;
+        timer.innerHTML = msToTime(defaultTime);
+    }
+
+    function runBreak() {
+        pauseTime -= 1000;
+        timer.innerHTML = msToTime(pauseTime);
+    }
 
     // Format milliseconds to hh:mm:ss
     function msToTime(s) {
