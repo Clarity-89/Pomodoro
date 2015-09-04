@@ -1,27 +1,28 @@
 (function ($) {
     // Default timer
-    var defaultTime = 1500000, // 25 minutes
+    var defaultTime = 15000, // 25 minutes
         pauseTime = 3000,
+        userSetTime, //the length of  pomodoro set by user (if different from the default time)
         t = null,
         timer = document.getElementById('timer');
     var snd = new Audio("cell.mp3");
 
     function setTime() {
-        return timer.innerHTML = (defaultTime / 1000 / 60 % 60).toString();
+        return timer.innerHTML = msToTime(defaultTime, true);
     }
 
     function runTimer() {
         defaultTime -= 1000;
-        timer.innerHTML = msToTime(defaultTime);
+        timer.innerHTML = msToTime(defaultTime, true);
     }
 
     function runBreak() {
         pauseTime -= 1000;
-        timer.innerHTML = msToTime(pauseTime);
+        timer.innerHTML = msToTime(pauseTime, true);
     }
 
     // Format milliseconds to hh:mm:ss
-    function msToTime(s) {
+    function msToTime(s, seconds) {
 
         function addZ(n) {
             return (n < 10 ? '0' : '') + n;
@@ -34,7 +35,7 @@
         var mins = s % 60;
         // var hrs = (s - mins) / 60;
 
-        return addZ(mins) + ':' + addZ(secs);
+        return seconds ? addZ(mins) + ':' + addZ(secs) : addZ(mins);
     }
 
     function pomodoro() {
@@ -52,7 +53,7 @@
 
             runBreak();
             if (pauseTime === 0) {
-                defaultTime = 15000;
+                defaultTime = userSetTime;
             }
         }
     }
@@ -75,7 +76,7 @@
         if (t === null) {
             t = setInterval(pomodoro, 1000);
             $('#reset').show();
-            userSetTime = timer.value;
+            userSetTime = defaultTime;
             console.log(userSetTime);
         }
     });
@@ -84,7 +85,7 @@
         clearInterval(t);
         t = null;
         //set time to default value
-        defaultTime = 1500000;
+        defaultTime = userSetTime;
         setTime();
     });
     setTime();
