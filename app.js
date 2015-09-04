@@ -5,7 +5,8 @@
         userSetTime, //the length of  pomodoro set by user (if different from the default time)
         t = null,
         timer = document.getElementById('timer');
-    var snd = new Audio("cell.mp3");
+    var alarm = new Audio("alarm.wav");
+    var clock = new Audio('clock.wav');
 
     function setTime() {
         return timer.innerHTML = msToTime(defaultTime, true);
@@ -14,6 +15,7 @@
     function runTimer() {
         defaultTime -= 1000;
         timer.innerHTML = msToTime(defaultTime, true);
+        clock.play();
     }
 
     function runBreak() {
@@ -45,12 +47,13 @@
             if (defaultTime === 0) {
                 pauseTime = 3000;
 
-                snd.play();
+
             } else {
-                snd.pause();
+                alarm.pause();
             }
         } else {
-
+            clock.pause();
+            alarm.play();
             runBreak();
             if (pauseTime === 0) {
                 defaultTime = userSetTime;
@@ -87,6 +90,8 @@
         //set time to default value
         defaultTime = userSetTime;
         setTime();
+        clock.pause();
+        alarm.pause();
     });
     setTime();
 })(jQuery);
