@@ -1,6 +1,6 @@
 (function ($) {
     // Default timer
-    var defaultTime = 15000, // 25 minutes
+    var defaultTime = 1500000, // 25 minutes
         pauseTime = 3000,
         userSetTime, //the length of  pomodoro set by user (if different from the default time)
         t = null,
@@ -35,9 +35,9 @@
         var secs = s % 60;
         s = (s - secs) / 60;
         var mins = s % 60;
-        // var hrs = (s - mins) / 60;
+        var hrs = (s - mins) / 60;
 
-        return seconds ? addZ(mins) + ':' + addZ(secs) : addZ(mins);
+        return seconds ? addZ(hrs) + ':' + addZ(mins) + ':' + addZ(secs) : addZ(mins);
     }
 
     function pomodoro() {
@@ -46,7 +46,6 @@
             runTimer();
             if (defaultTime === 0) {
                 pauseTime = 3000;
-
 
             } else {
                 alarm.pause();
@@ -62,15 +61,15 @@
     }
 
     $('#increase').click(function () {
-        if (t === null) {
-            defaultTime = (defaultTime + 300000) % 3600000;
+        if (t === null && defaultTime < 3600000) {
+            defaultTime = (defaultTime + 300000);
             setTime();
         }
     });
 
     $('#decrease').click(function () {
-        if (t === null) {
-            defaultTime = (defaultTime - 300000) % 3600000;
+        if (t === null && defaultTime > 1200000) {
+            defaultTime = (defaultTime - 300000);
             setTime();
         }
     });
