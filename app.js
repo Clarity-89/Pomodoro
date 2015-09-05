@@ -7,11 +7,11 @@
         increase = $('#increase'),
         decrease = $('#decrease'),
         timer = document.getElementById('timer');
-    var alarm = new Audio("alarm.wav");
+    var alarm = new Audio("gong2.wav");
     var clock = new Audio('clock.wav');
 
     function setTime() {
-        return timer.innerHTML = msToTime(defaultTime, true);
+        return timer.innerHTML = msToTime(defaultTime, false);
     }
 
     function runTimer() {
@@ -39,7 +39,7 @@
         var mins = s % 60;
         var hrs = (s - mins) / 60;
 
-        return seconds ? addZ(hrs) + ':' + addZ(mins) + ':' + addZ(secs) : addZ(mins);
+        return seconds ? addZ(hrs)+ ':' + addZ(mins) + ':' + addZ(secs) : addZ(hrs) + ':' + addZ(mins);
     }
 
     function pomodoro() {

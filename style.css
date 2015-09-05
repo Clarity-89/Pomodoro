@@ -14,12 +14,20 @@
 }
 
 #timer, #break {
-    margin: 1% 5%;
+    margin: 1% 0 1% 0;
     font-size: 48px;
+    background-color: red;
 }
 
 #reset {
     display: none;
 }
 
-
+#timer {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 200px;
+}
