@@ -4,6 +4,8 @@
         pauseTime = 3000,
         userSetTime, //the length of  pomodoro set by user (if different from the default time)
         t = null,
+        increase = $('#increase'),
+        decrease = $('#decrease'),
         timer = document.getElementById('timer');
     var alarm = new Audio("alarm.wav");
     var clock = new Audio('clock.wav');
@@ -60,14 +62,14 @@
         }
     }
 
-    $('#increase').click(function () {
+   increase.click(function () {
         if (t === null && defaultTime < 3600000) {
             defaultTime = (defaultTime + 300000);
             setTime();
         }
     });
 
-    $('#decrease').click(function () {
+    decrease.click(function () {
         if (t === null && defaultTime > 1200000) {
             defaultTime = (defaultTime - 300000);
             setTime();
@@ -78,6 +80,8 @@
         if (t === null) {
             t = setInterval(pomodoro, 1000);
             $('#reset').show();
+            increase.hide();
+            decrease.hide();
             userSetTime = defaultTime;
             console.log(userSetTime);
         }
@@ -91,6 +95,8 @@
         setTime();
         clock.pause();
         alarm.pause();
+        increase.show();
+        decrease.show();
     });
     setTime();
 })(jQuery);
