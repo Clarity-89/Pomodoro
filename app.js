@@ -7,8 +7,8 @@
         increase = $('#increase'),
         decrease = $('#decrease'),
         timer = document.getElementById('timer');
-    var alarm = new Audio("gong2.wav");
-    var clock = new Audio('clock2.mp3');
+    var alarm = new Audio("audio/gong2.wav");
+    var clock = new Audio('audio/clock2.mp3');
 
     function setTime() {
         return timer.innerHTML = msToTime(defaultTime, false);
