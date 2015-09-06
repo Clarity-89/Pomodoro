@@ -1,6 +1,7 @@
 body {
     font-family: 'Kaushan Script', cursive;
 }
+
 #container-custom {
 
     background: -moz-linear-gradient(top, #8fc800 0%, #8fc800 100%); /* FF3.6+ */
@@ -38,8 +39,39 @@ body {
     text-align: center;
     line-height: 250px;
 }
+
 #title {
     text-align: center;
     margin-top: 30px;
+}
 
+.custom-button {
+    border-top: 1px solid #f797a4;
+    background: #f00e21;
+    background: -webkit-gradient(linear, left top, left bottom, from(#d12626), to(#f00e21));
+    background: -webkit-linear-gradient(top, #d12626, #f00e21);
+    background: -moz-linear-gradient(top, #d12626, #f00e21);
+    background: -ms-linear-gradient(top, #d12626, #f00e21);
+    background: -o-linear-gradient(top, #d12626, #f00e21);
+    padding: 6px 12px;
+    -webkit-border-radius: 17px;
+    -moz-border-radius: 17px;
+    border-radius: 17px;
+    -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+    -moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+    box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+    text-shadow: rgba(0, 0, 0, .4) 0 1px 0;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.custom-button:hover {
+    border-top-color: #c92626;
+    background: #c92626;
+    color: #ccc;
+}
+
+.custom-button:active {
+    border-top-color: #d6112b;
+    background: #d6112b;
 }
