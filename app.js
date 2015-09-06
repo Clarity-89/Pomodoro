@@ -79,7 +79,6 @@
     $('#start').click(function () {
         if (t === null) {
             t = setInterval(pomodoro, 1000);
-            $('#reset').show();
             increase.hide();
             decrease.hide();
             userSetTime = defaultTime;

@@ -1,9 +1,13 @@
 body {
     font-family: 'Kaushan Script', cursive;
+    background: url("http://images6.alphacoders.com/407/407038.jpg") no-repeat center center fixed;;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 #container-custom {
-
     background: -moz-linear-gradient(top, #8fc800 0%, #8fc800 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #8fc800), color-stop(100%, #8fc800)); /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(top, #8fc800 0%, #8fc800 100%); /* Chrome10+,Safari5.1+ */
@@ -13,7 +17,7 @@ body {
     margin: 4% auto;
     padding: 3%;
     text-align: center;
-
+    border-radius: 25px;
 }
 
 #timer, #break {
@@ -25,10 +29,6 @@ body {
     background: -o-linear-gradient(top, #ff3019 0%, #cf0404 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top, #ff3019 0%, #cf0404 100%); /* IE10+ */
     background: linear-gradient(to bottom, #ff3019 0%, #cf0404 100%); /* W3C */
-}
-
-#reset {
-    display: none;
 }
 
 #timer {
@@ -43,10 +43,10 @@ body {
 #title {
     text-align: center;
     margin-top: 30px;
+    color: #cf0404;
 }
 
 .custom-button {
-    border-top: 1px solid #f797a4;
     background: #f00e21;
     background: -webkit-gradient(linear, left top, left bottom, from(#d12626), to(#f00e21));
     background: -webkit-linear-gradient(top, #d12626, #f00e21);
@@ -57,21 +57,16 @@ body {
     -webkit-border-radius: 17px;
     -moz-border-radius: 17px;
     border-radius: 17px;
-    -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
-    -moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
-    box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
-    text-shadow: rgba(0, 0, 0, .4) 0 1px 0;
+    border: none;
     text-decoration: none;
     vertical-align: middle;
 }
 
 .custom-button:hover {
-    border-top-color: #c92626;
-    background: #c92626;
+    background: #7a2020;
     color: #ccc;
 }
 
 .custom-button:active {
-    border-top-color: #d6112b;
-    background: #d6112b;
+    background: #c10f26;
 }
