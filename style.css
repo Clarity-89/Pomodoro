@@ -7,7 +7,7 @@
     background: -o-linear-gradient(top, #8fc800 0%, #8fc800 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top, #8fc800 0%, #8fc800 100%); /* IE10+ */
     background: linear-gradient(to bottom, #8fc800 0%, #8fc800 100%); /* W3C */
-    margin: 5% auto;
+    margin: 4% auto;
     padding: 3%;
     text-align: center;
 
@@ -35,4 +35,8 @@
     border-radius: 50%;
     text-align: center;
     line-height: 200px;
+}
+#title {
+    text-align: center;
+    margin-top: 30px;
 }
