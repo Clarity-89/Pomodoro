@@ -73,3 +73,9 @@ body {
     font-size: 20px;
     padding: 3px 10px;
 }
+
+.guideline {
+    text-align: left;
+    font-size: 18px;
+    margin: 2% auto;
+}
