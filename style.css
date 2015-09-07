@@ -99,7 +99,7 @@ body {
     text-align: center;
     font-family: Arial, sans-serif;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
     color: black;
 }
 
@@ -108,4 +108,7 @@ body {
     .footer {
         position: relative;
     }
+}
+#wiki{
+    font-size: 14px;
 }
