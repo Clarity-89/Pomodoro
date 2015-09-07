@@ -90,7 +90,7 @@
         clearInterval(t);
         t = null;
         //set time to default value
-        defaultTime = userSetTime;
+        defaultTime = userSetTime||defaultTime;
         setTime();
         clock.pause();
         alarm.pause();
