@@ -8,12 +8,12 @@ body {
 }
 
 #container-custom {
-   /* background: -moz-linear-gradient(top, #299a0b 0%, #299a0b 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #299a0b), color-stop(100%, #299a0b));
-    background: -webkit-linear-gradient(top, #299a0b 0%, #299a0b 100%);
-    background: -o-linear-gradient(top, #299a0b 0%, #299a0b 100%);
-    background: -ms-linear-gradient(top, #299a0b 0%, #299a0b 100%);
-    background: linear-gradient(to bottom, #299a0b 0%, #299a0b 100%); */
+    /* background: -moz-linear-gradient(top, #299a0b 0%, #299a0b 100%);
+     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #299a0b), color-stop(100%, #299a0b));
+     background: -webkit-linear-gradient(top, #299a0b 0%, #299a0b 100%);
+     background: -o-linear-gradient(top, #299a0b 0%, #299a0b 100%);
+     background: -ms-linear-gradient(top, #299a0b 0%, #299a0b 100%);
+     background: linear-gradient(to bottom, #299a0b 0%, #299a0b 100%); */
     background-color: rgba(41, 151, 11, .9);
     margin: 4% auto;
     padding: 2%;
@@ -85,10 +85,27 @@ body {
 #session {
     font-size: 32px;
 }
-#volume {
 
-}
 #volume:hover {
     background-color: #175a0a;
     cursor: pointer;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: black;
+}
+
+/*set footer to relative on mobile*/
+@media only screen and (max-device-width: 480px) {
+    .footer {
+        position: relative;
+    }
 }
