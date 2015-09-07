@@ -109,6 +109,8 @@ body {
         position: relative;
     }
 }
-#wiki{
-    font-size: 14px;
+
+#heading {
+    font-size: 22px;
+    text-decoration: underline;
 }
