@@ -1,7 +1,7 @@
 (function ($) {
     // Default timer
-    var defaultTime = 1500000 / 100, // 25 minutes
-        pauseTime = 3000, // 5 minutes for a short break
+    var defaultTime = 1500000, // 25 minutes
+        pauseTime = 300000, // 5 minutes for a short break
         userSetTime, //the length of  pomodoro set by user (if different from the default time)
         t = null, // a switch to check if the timer has been started
         increase = $('#increase'),
@@ -15,7 +15,7 @@
         winding = new Audio('audio/winding.mp3');
 
     function setTime() {
-        return timer.innerHTML = msToTime(defaultTime, true);
+        return timer.innerHTML = msToTime(defaultTime, false);
     }
 
     function runTimer() {
@@ -52,14 +52,13 @@
         if (defaultTime > 0) {
             runTimer();
             if (defaultTime === 0 && count < 4) {
-                pauseTime = 3000 * 4;
-                if (pauseTime = 3000 * 4) {
+                if (pauseTime = 300000) {
                     clock.pause();
                     alarm.play();
                 }
             } else if (defaultTime === 0 && count === 4) {
                 count = 0;
-                pauseTime = 3000 * 5;
+                pauseTime = 900000;
                 clock.pause();
                 alarm.play();
             }
