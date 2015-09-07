@@ -41,7 +41,7 @@ body {
 #title {
     text-align: center;
     margin-top: 30px;
-    color: #cf0404;
+    color: #860404;
 }
 
 .custom-button {
@@ -75,6 +75,7 @@ body {
 }
 
 .guideline {
+    font-family: Arial, sans-serif;
     text-align: left;
     font-size: 18px;
     margin: 2% auto;
