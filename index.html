@@ -11,6 +11,9 @@
     <!-- Google Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script'
           rel='stylesheet' type='text/css'>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
@@ -23,9 +26,12 @@
 <h1 id="title">Pomodoro Clock</h1>
 
 <div class="container" id="container-custom">
-
+ 
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-8">
+            <i class="fa fa-volume-up fa-3x" id="volume"></i>
+
+            <div id="session">&nbsp;</div>
             <button id="increase" class="custom-button">+</button>
             <div id="timer"></div>
             <button id="decrease" class="custom-button">-</button>
@@ -36,7 +42,8 @@
             <button id="reset" class="custom-button">Reset</button>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4 guideline">
-            <p>The Pomodoro Technique (adapted from <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank">Wikipedia</a>):</p>
+            <p>The Pomodoro Technique (adapted from <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique"
+                                                       target="_blank">Wikipedia</a>):</p>
 
             <p> 1. Decide on the task to be done</p>
 
@@ -46,7 +53,7 @@
 
             <p>4. Take a short break (5 minutes)</p>
 
-            <p> 5. After four pomodoros, take a longer break (15 minutes)</p>
+            <p> 5. After four sessions, take a longer break (15 minutes)</p>
         </div>
     </div>
 </div>
