@@ -22,13 +22,13 @@ body {
 
 #timer {
     display: inline-block;
-    height: 250px;
-    width: 250px;
+    height: 220px;
+    width: 220px;
     border-radius: 50%;
     border: 1px black solid;
     text-align: center;
-    line-height: 250px;
-    margin: 1% 0 1% 0;
+    line-height: 220px;
+    margin: 20px 0 10px 0;
     font-size: 48px;
     background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff3019), color-stop(100%, #cf0404)); /* Chrome,Safari4+ */
@@ -78,5 +78,5 @@ body {
     font-family: Arial, sans-serif;
     text-align: left;
     font-size: 18px;
-    margin: 2% auto;
+    margin: 20px auto;
 }
