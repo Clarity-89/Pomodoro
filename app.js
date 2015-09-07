@@ -10,9 +10,9 @@
         count = 1, // number of sessions
         audio = true,
         timer = document.getElementById('timer'),
-        alarm = new Audio("audio/gong2.wav"),
-        clock = new Audio('audio/clock2.mp3'),
-        winding = new Audio('audio/winding2.mp3');
+        alarm = new Audio("audio/gong.mp3"),
+        clock = new Audio('audio/clock.mp3'),
+        winding = new Audio('audio/winding.mp3');
 
     function setTime() {
         return timer.innerHTML = msToTime(defaultTime, true);
@@ -64,7 +64,8 @@
                 alarm.play();
             }
         } else {
-            session.text('Break!');
+            if (count === 0) session.text('Long break!');
+            else session.text('Break!');
             clock.pause();
 
             runBreak();
