@@ -10,7 +10,7 @@
         count = 1, // number of sessions
         audio = true,
         timer = document.getElementById('timer'),
-        alarm = new Audio("audio/gong.mp3"),
+        alarm = new Audio('audio/bell.mp3'),
         clock = new Audio('audio/clock.mp3'),
         winding = new Audio('audio/winding.mp3');
 
